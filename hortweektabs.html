@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plant Categories</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, serif; background: #fff; }
+
+  /* TAB NAV */
+  .tab-nav {
+    display: flex;
+    width: 100%;
+    border-bottom: none;
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 18px 20px;
+    background: #d9d9d9;
+    border: none;
+    border-right: 3px solid #fff;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: left;
+    color: #222;
+    transition: background 0.15s;
+    line-height: 1.2;
+  }
+  .tab-btn:last-child { border-right: none; }
+  .tab-btn:hover { background: #c8c8c8; }
+  .tab-btn.active {
+    background: #fff;
+    font-weight: bold;
+    border-top: 4px solid #4a5e2a;
+  }
+
+  /* TAB CONTENT */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* HERO AREA */
+  .hero {
+    display: flex;
+    align-items: flex-start;
+    padding: 40px 0 30px 0;
+    gap: 40px;
+  }
+  .hero-title {
+    font-family: 'Jubilat', Georgia, serif;
+    font-size: clamp(52px, 8vw, 80px);
+    font-weight: 900;
+    line-height: 1;
+    color: #111;
+    flex: 0 0 auto;
+    max-width: 45%;
+  }
+  .hero-desc {
+    font-size: 22px;
+    line-height: 1.4;
+    color: #111;
+    padding-top: 10px;
+    flex: 1;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 4px solid #111;
+    margin-bottom: 8px;
+  }
+
+  /* DROPDOWNS */
+  .accordion-wrap { width: 100%; }
+
+  details {
+    margin: 0 0 12px 0;
+    background: #2F3E31;
+    width: 100%;
+  }
+  details:last-child { margin-bottom: 0; }
+
+  summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 36px;
+    background: #2F3E31;
+    color: #fff;
+    font-family: 'Jubilat', Georgia, serif;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 1.1;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::marker { content: ""; }
+
+  .summary-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .summary-icons {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    opacity: 0.85;
+  }
+  .summary-icons svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+  }
+
+  .chevron {
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  details[open] .chevron {
+    transform: rotate(180deg);
+  }
+
+  .details-body {
+    background: #fff;
+    color: #000;
+    padding: 20px 36px 28px;
+  }
+
+  /* Icon SVGs inline */
+  .icon-doc { display:inline-block; }
+  .icon-video { display:inline-block; }
+  .icon-grid { display:inline-block; }
+</style>
+</head>
+<body>
+
+<!-- TAB NAVIGATION -->
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('seasonal')">Seasonal<br>bedding</button>
+  <button class="tab-btn" onclick="showTab('perennials')">Perennials</button>
+  <button class="tab-btn" onclick="showTab('trees')">Trees</button>
+  <button class="tab-btn" onclick="showTab('ericaceous')">Ericaceous<br>plants</button>
+  <button class="tab-btn" onclick="showTab('roses')">Roses</button>
+</nav>
+
+<!-- SEASONAL BEDDING TAB -->
+<div class="tab-panel active" id="tab-seasonal">
+  <div class="hero">
+    <div class="hero-title">Seasonal<br>bedding</div>
+    <div class="hero-desc">Please click on the tab above that says Roses and then investigate the banners below it, this page is dummy</div>
+  </div>
+  <hr class="divider">
+  <div class="accordion-wrap">
+    <!-- ITEM 1 -->
+    <details>
+      <summary>
+        <span class="summary-left">
+          <span class="summary-icons">
+            <!-- Doc icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg>
+            <!-- Video icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4zm0 2h16v12H4V6zm5 2v8l7-4-7-4z"/></svg>
+          </span>
+          <span>Trial systems</span>
+        </span>
+        <svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none">
+          <path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path>
+        </svg>
+      </summary>
+      <div class="details-body">
+        <div class="infogram-embed" data-id="_/L7kxHrJEScX8HBzVZ2yj" data-type="interactive" data-title="Copy: DRIVING CHANGE - GROWERS/PLANT SUPPLIERS"></div>
+      </div>
+    </details>
+    <!-- ITEM 2 -->
+    <details>
+      <summary>
+        <span class="summary-left">
+          <span class="summary-icons">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg>
+          </span>
+          <span>Watering system</span>
+        </span>
+        <svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none">
+          <path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path>
+        </svg>
+      </summary>
+      <div class="details-body">
+        <div class="infogram-embed" data-id="_/b4NgP2MSpGvYc2kJk4SZ" data-type="interactive" data-title="Copy: DRIVING CHANGE - GROWERS/PLANT SUPPLIERS"></div>
+      </div>
+    </details>
+    <!-- ITEM 3 -->
+    <details>
+      <summary>
+        <span class="summary-left">
+          <span class="summary-icons">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4zm0 2h16v12H4V6zm5 2v8l7-4-7-4z"/></svg>
+            <!-- Grid/calendar icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 4a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H3zm1 2h16v2H4V6zm0 4h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zm-12 6h4v2H4v-2zm6 0h4v2h-4v-2zm6 0h4v2h-4v-2z"/></svg>
+          </span>
+          <span>Peat-free mixes</span>
+        </span>
+        <svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none">
+          <path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path>
+        </svg>
+      </summary>
+      <div class="details-body">
+        <div class="infogram-embed" data-id="_/L7kxHrJEScX8HBzVZ2yj" data-type="interactive" data-title="Copy: DRIVING CHANGE - GROWERS/PLANT SUPPLIERS"></div>
+      </div>
+    </details>
+  </div>
+</div>
+
+<!-- PERENNIALS TAB -->
+<div class="tab-panel" id="tab-perennials">
+  <div class="hero">
+    <div class="hero-title">Perennials</div>
+    <div class="hero-desc">Content for Perennials tab.</div>
+  </div>
+  <hr class="divider">
+  <div class="accordion-wrap">
+    <details>
+      <summary><span class="summary-left"><span class="summary-icons"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg></span><span>Trial systems</span></span><svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none"><path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path></svg></summary>
+      <div class="details-body">Content here.</div>
+    </details>
+    <details>
+      <summary><span class="summary-left"><span class="summary-icons"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg></span><span>Watering system</span></span><svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none"><path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path></svg></summary>
+      <div class="details-body">Content here.</div>
+    </details>
+    <details>
+      <summary><span class="summary-left"><span class="summary-icons"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg></span><span>Peat-free mixes</span></span><svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none"><path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path></svg></summary>
+      <div class="details-body">Content here.</div>
+    </details>
+  </div>
+</div>
+
+<!-- TREES TAB -->
+<div class="tab-panel" id="tab-trees">
+  <div class="hero">
+    <div class="hero-title">Trees</div>
+    <div class="hero-desc">Content for Trees tab.</div>
+  </div>
+  <hr class="divider">
+  <div class="accordion-wrap">
+    <details><summary><span class="summary-left"><span class="summary-icons"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg></span><span>Trial systems</span></span><svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none"><path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path></svg></summary><div class="details-body">Content here.</div></details>
+    <details><summary><span class="summary-left"><span class="summary-icons"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg></span><span>Watering system</span></span><svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none"><path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path></svg></summary><div class="details-body">Content here.</div></details>
+    <details><summary><span class="summary-left"><span class="summary-icons"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg></span><span>Peat-free mixes</span></span><svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none"><path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path></svg></summary><div class="details-body">Content here.</div></details>
+  </div>
+</div>
+
+<!-- ERICACEOUS TAB -->
+<div class="tab-panel" id="tab-ericaceous">
+  <div class="hero">
+    <div class="hero-title">Ericaceous<br>plants</div>
+    <div class="hero-desc">Content for Ericaceous plants tab.</div>
+  </div>
+  <hr class="divider">
+  <div class="accordion-wrap">
+    <details><summary><span class="summary-left"><span class="summary-icons"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg></span><span>Trial systems</span></span><svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none"><path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path></svg></summary><div class="details-body">Content here.</div></details>
+    <details><summary><span class="summary-left"><span class="summary-icons"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg></span><span>Watering system</span></span><svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none"><path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path></svg></summary><div class="details-body">Content here.</div></details>
+    <details><summary><span class="summary-left"><span class="summary-icons"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg></span><span>Peat-free mixes</span></span><svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none"><path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path></svg></summary><div class="details-body">Content here.</div></details>
+  </div>
+</div>
+
+<!-- ROSES TAB -->
+<div class="tab-panel" id="tab-roses">
+  <div class="hero">
+    <div class="hero-title">Roses</div>
+    <div class="hero-desc">Content for Roses tab. Add your banners and embeds below.</div>
+  </div>
+  <hr class="divider">
+  <div class="accordion-wrap">
+    <details><summary><span class="summary-left"><span class="summary-icons"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg></span><span>Trial systems</span></span><svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none"><path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path></svg></summary><div class="details-body">Content here.</div></details>
+    <details><summary><span class="summary-left"><span class="summary-icons"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg></span><span>Watering system</span></span><svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none"><path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path></svg></summary><div class="details-body">Content here.</div></details>
+    <details><summary><span class="summary-left"><span class="summary-icons"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm0 2h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h5v-2H8z"/></svg></span><span>Peat-free mixes</span></span><svg class="chevron" width="28" height="18" viewBox="0 0 44 28" fill="none"><path d="M4 4 L22 22 L40 4" stroke="white" stroke-width="5"></path></svg></summary><div class="details-body">Content here.</div></details>
+  </div>
+</div>
+
+<!-- Infogram loader -->
+<script>!function(e,n,i,s){var d="InfogramEmbeds";var o=e.getElementsByTagName(n)[0];if(window[d]&&window[d].initialized)window[d].process&&window[d].process();else if(!e.getElementById(i)){var r=e.createElement(n);r.async=1,r.id=i,r.src=s,o.parentNode.insertBefore(r,o)}}(document,"script","infogram-async","https://e.infogram.com/js/dist/embed-loader-min.js");</script>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+</script>
+</body>
+</html>
